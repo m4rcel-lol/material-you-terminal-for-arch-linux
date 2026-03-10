@@ -329,7 +329,8 @@ impl MyTerminalWindow {
         // ── Build theme switcher menu ─────────────────────────────────────
         {
             let theme_menu = gio::Menu::new();
-            let theme_names = theme_manager.borrow().theme_names();
+            let borrowed_theme_manager = theme_manager.borrow();
+            let theme_names = borrowed_theme_manager.theme_names();
 
             for (key, display_name) in theme_names {
                 let action_name = format!("win.switch-theme::{}", key);
@@ -621,7 +622,8 @@ impl MyTerminalWindow {
 
         // ── switch-theme ──────────────────────────────────────────────────
         // Register individual actions for each theme
-        let theme_names = theme_manager.borrow().theme_names();
+        let borrowed_theme_manager = theme_manager.borrow();
+        let theme_names = borrowed_theme_manager.theme_names();
         for (key, _) in theme_names {
             let action_name = format!("switch-theme::{}", key);
             let act = gio::SimpleAction::new(&action_name, None);
