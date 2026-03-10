@@ -16,6 +16,8 @@ pub struct HeaderBar {
     /// Button to open a new tab (kept for external use / theming).
     #[allow(dead_code)]
     pub new_tab_button: gtk4::Button,
+    /// Button to open the theme switcher.
+    pub theme_button: gtk4::MenuButton,
     /// Button to open the search bar.
     pub search_button: gtk4::ToggleButton,
     /// Primary / hamburger menu button (kept for external use / theming).
@@ -49,6 +51,14 @@ impl HeaderBar {
         search_button.add_css_class("flat");
         bar.pack_end(&search_button);
 
+        // Theme switcher button (will be populated by window.rs)
+        let theme_button = gtk4::MenuButton::builder()
+            .icon_name("preferences-color-symbolic")
+            .tooltip_text("Quick Theme Switcher")
+            .build();
+        theme_button.add_css_class("flat");
+        bar.pack_end(&theme_button);
+
         let menu = Self::build_primary_menu();
         let menu_button = gtk4::MenuButton::builder()
             .icon_name("open-menu-symbolic")
@@ -61,6 +71,7 @@ impl HeaderBar {
         HeaderBar {
             bar,
             new_tab_button,
+            theme_button,
             search_button,
             menu_button,
         }

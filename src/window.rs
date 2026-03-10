@@ -326,6 +326,19 @@ impl MyTerminalWindow {
                 });
         }
 
+        // ── Build theme switcher menu ─────────────────────────────────────
+        {
+            let theme_menu = gio::Menu::new();
+            let theme_names = theme_manager.borrow().theme_names();
+
+            for (key, display_name) in theme_names {
+                let action_name = format!("win.switch-theme::{}", key);
+                theme_menu.append(Some(display_name), Some(&action_name));
+            }
+
+            header_bar_wrapper.theme_button.set_menu_model(Some(&theme_menu));
+        }
+
         toolbar_view.add_top_bar(&header_bar_wrapper.bar);
         toolbar_view.set_content(Some(&content_box));
 
@@ -602,6 +615,28 @@ impl MyTerminalWindow {
                     .modal(true)
                     .build();
                 sw.present();
+            });
+            window.add_action(&act);
+        }
+
+        // ── switch-theme ──────────────────────────────────────────────────
+        // Register individual actions for each theme
+        let theme_names = theme_manager.borrow().theme_names();
+        for (key, _) in theme_names {
+            let action_name = format!("switch-theme::{}", key);
+            let act = gio::SimpleAction::new(&action_name, None);
+            let theme_mgr = Rc::clone(theme_manager);
+            let tab_mgr = Rc::clone(tab_manager);
+            let settings_clone = Rc::clone(settings);
+            let overlay = toast_overlay.clone();
+            let key_owned = key.to_string();
+
+            act.connect_activate(move |_, _| {
+                theme_mgr.borrow_mut().set_active(&key_owned);
+                let theme = theme_mgr.borrow().active().clone();
+                tab_mgr.borrow().apply_theme_to_all(&theme);
+                settings_clone.borrow_mut().theme = key_owned.clone();
+                show_toast(&overlay, &format!("Switched to {} theme", theme.name));
             });
             window.add_action(&act);
         }
