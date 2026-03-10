@@ -1,0 +1,29 @@
+{
+  "name": "GitHub Dark",
+  "background": "#0D1117",
+  "foreground": "#C9D1D9",
+  "cursor": "#58A6FF",
+  "cursor_foreground": "#0D1117",
+  "selection_background": "#1F6FEB",
+  "selection_foreground": "#FFFFFF",
+  "surface": "#161B22",
+  "accent": "#58A6FF",
+  "ansi": [
+    "#484F58",
+    "#FF7B72",
+    "#3FB950",
+    "#D29922",
+    "#58A6FF",
+    "#BC8CFF",
+    "#39C5CF",
+    "#B1BAC4",
+    "#6E7681",
+    "#FFA198",
+    "#56D364",
+    "#E3B341",
+    "#79C0FF",
+    "#D2A8FF",
+    "#56D4DD",
+    "#F0F6FC"
+  ]
+}

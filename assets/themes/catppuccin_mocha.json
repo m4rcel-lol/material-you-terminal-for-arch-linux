@@ -1,0 +1,29 @@
+{
+  "name": "Catppuccin Mocha",
+  "background": "#1E1E2E",
+  "foreground": "#CDD6F4",
+  "cursor": "#F5E0DC",
+  "cursor_foreground": "#1E1E2E",
+  "selection_background": "#585B70",
+  "selection_foreground": "#CDD6F4",
+  "surface": "#181825",
+  "accent": "#F5C2E7",
+  "ansi": [
+    "#45475A",
+    "#F38BA8",
+    "#A6E3A1",
+    "#F9E2AF",
+    "#89B4FA",
+    "#F5C2E7",
+    "#94E2D5",
+    "#BAC2DE",
+    "#585B70",
+    "#F38BA8",
+    "#A6E3A1",
+    "#F9E2AF",
+    "#89B4FA",
+    "#F5C2E7",
+    "#94E2D5",
+    "#A6ADC8"
+  ]
+}

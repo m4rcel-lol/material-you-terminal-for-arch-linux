@@ -1,0 +1,29 @@
+{
+  "name": "GitHub Light",
+  "background": "#FFFFFF",
+  "foreground": "#24292F",
+  "cursor": "#0969DA",
+  "cursor_foreground": "#FFFFFF",
+  "selection_background": "#0969DA",
+  "selection_foreground": "#FFFFFF",
+  "surface": "#F6F8FA",
+  "accent": "#0969DA",
+  "ansi": [
+    "#24292F",
+    "#CF222E",
+    "#116329",
+    "#4D2D00",
+    "#0969DA",
+    "#8250DF",
+    "#1B7C83",
+    "#6E7781",
+    "#57606A",
+    "#A40E26",
+    "#1A7F37",
+    "#633C01",
+    "#218BFF",
+    "#A475F9",
+    "#3192AA",
+    "#8C959F"
+  ]
+}

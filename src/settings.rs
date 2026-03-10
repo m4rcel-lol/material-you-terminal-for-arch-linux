@@ -103,8 +103,24 @@ pub struct Settings {
     pub bell: bool,
     /// Enable font ligatures.
     pub font_ligatures: bool,
+    /// Enable bold text in terminal.
+    #[serde(default = "default_true")]
+    pub allow_bold: bool,
+    /// Show bold text in bright colors.
+    #[serde(default = "default_true")]
+    pub bold_is_bright: bool,
+    /// Enable hyperlink detection and clickable URLs.
+    #[serde(default = "default_true")]
+    pub allow_hyperlinks: bool,
+    /// Enable audible bell sound.
+    #[serde(default)]
+    pub audible_bell: bool,
     /// Keyboard shortcut customisation.
     pub keybindings: Keybindings,
+}
+
+fn default_true() -> bool {
+    true
 }
 
 impl Default for Settings {
@@ -122,6 +138,10 @@ impl Default for Settings {
             cursor_shape: CursorShape::default(),
             bell: false,
             font_ligatures: false,
+            allow_bold: true,
+            bold_is_bright: true,
+            allow_hyperlinks: true,
+            audible_bell: false,
             keybindings: Keybindings::default(),
         }
     }

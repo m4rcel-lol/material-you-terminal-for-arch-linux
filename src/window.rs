@@ -43,35 +43,207 @@ window.myterminal {
 .myterminal-headerbar {
     background-color: @headerbar_bg_color;
     border-bottom: 1px solid alpha(@border_color, 0.5);
-    min-height: 46px;
+    min-height: 48px;
+    box-shadow: 0 2px 8px alpha(black, 0.1);
+}
+
+.myterminal-headerbar button {
+    border-radius: 8px;
+    transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.myterminal-headerbar button:hover {
+    background-color: alpha(@accent_color, 0.1);
 }
 
 /* ── Tab bar ─────────────────────────────────────────────────────────────── */
 tabbar {
     background-color: @headerbar_bg_color;
+    padding: 4px 8px 0 8px;
 }
+
 tabbar tab {
-    border-radius: 8px 8px 0 0;
-    min-height: 36px;
-    padding: 0 12px;
+    border-radius: 10px 10px 0 0;
+    min-height: 38px;
+    padding: 0 16px;
+    margin: 0 2px;
+    transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    background-color: transparent;
 }
+
+tabbar tab:hover {
+    background-color: alpha(@accent_color, 0.08);
+}
+
 tabbar tab:checked {
+    background-color: @view_bg_color;
+    box-shadow: 0 -2px 8px alpha(black, 0.08);
+    font-weight: 500;
+}
+
+tabbar .start-action,
+tabbar .end-action {
+    padding: 0 8px;
+}
+
+/* ── Tab close button styling ─────────────────────────────────────────────── */
+tabbar tab button.close-button {
+    border-radius: 6px;
+    min-width: 20px;
+    min-height: 20px;
+    padding: 0;
+    margin: 0 4px;
+    opacity: 0.7;
+    transition: all 150ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+tabbar tab button.close-button:hover {
+    opacity: 1;
+    background-color: alpha(@error_color, 0.15);
+}
+
+/* ── Search bar ──────────────────────────────────────────────────────────── */
+searchbar {
+    background-color: @headerbar_bg_color;
+    border-bottom: 1px solid alpha(@border_color, 0.3);
+    padding: 8px;
+}
+
+searchbar entry {
+    border-radius: 10px;
+    min-height: 36px;
+    box-shadow: 0 2px 6px alpha(black, 0.08);
+}
+
+/* ── Terminal view ───────────────────────────────────────────────────────── */
+.terminal-view {
+    border-radius: 0;
     background-color: @view_bg_color;
 }
 
 /* ── Command palette ─────────────────────────────────────────────────────── */
 .command-palette {
-    border-radius: 12px;
-    box-shadow: 0 8px 32px alpha(black, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 12px 48px alpha(black, 0.5);
 }
+
 .command-palette-box {
     background-color: @dialog_bg_color;
+    border-radius: 16px;
+    border: 1px solid alpha(@border_color, 0.2);
+}
+
+.command-palette entry {
     border-radius: 12px;
+    min-height: 40px;
+    font-size: 14px;
+}
+
+.command-palette listview row {
+    border-radius: 8px;
+    margin: 2px 6px;
+    padding: 10px 12px;
+    transition: all 150ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.command-palette listview row:hover {
+    background-color: alpha(@accent_color, 0.12);
+}
+
+.command-palette listview row:selected {
+    background-color: alpha(@accent_color, 0.2);
 }
 
 /* ── Toast ───────────────────────────────────────────────────────────────── */
 toast {
-    border-radius: 24px;
+    border-radius: 28px;
+    box-shadow: 0 4px 16px alpha(black, 0.2);
+}
+
+/* ── Scrollbars ──────────────────────────────────────────────────────────── */
+scrollbar {
+    background-color: transparent;
+}
+
+scrollbar slider {
+    border-radius: 8px;
+    min-width: 8px;
+    min-height: 8px;
+    background-color: alpha(@window_fg_color, 0.3);
+    transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+scrollbar slider:hover {
+    background-color: alpha(@window_fg_color, 0.5);
+    min-width: 10px;
+}
+
+scrollbar slider:active {
+    background-color: alpha(@window_fg_color, 0.7);
+}
+
+/* ── Preferences window ──────────────────────────────────────────────────── */
+preferencespage {
+    background-color: @view_bg_color;
+}
+
+preferencesgroup {
+    border-radius: 12px;
+    background-color: @card_bg_color;
+}
+
+actionrow, expander row {
+    border-radius: 8px;
+    transition: background-color 150ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+actionrow:hover, expander row:hover {
+    background-color: alpha(@accent_color, 0.08);
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+button {
+    border-radius: 8px;
+    transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+button.suggested-action {
+    background: linear-gradient(to bottom, @accent_bg_color, alpha(@accent_bg_color, 0.95));
+    box-shadow: 0 2px 8px alpha(@accent_bg_color, 0.3);
+}
+
+button.suggested-action:hover {
+    box-shadow: 0 4px 12px alpha(@accent_bg_color, 0.4);
+}
+
+button.destructive-action {
+    background: linear-gradient(to bottom, @error_bg_color, alpha(@error_bg_color, 0.95));
+    box-shadow: 0 2px 8px alpha(@error_bg_color, 0.3);
+}
+
+button.destructive-action:hover {
+    box-shadow: 0 4px 12px alpha(@error_bg_color, 0.4);
+}
+
+/* ── Menu items ──────────────────────────────────────────────────────────── */
+menuitem {
+    border-radius: 6px;
+    margin: 2px 4px;
+    padding: 8px 12px;
+    transition: all 150ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+menuitem:hover {
+    background-color: alpha(@accent_color, 0.12);
+}
+
+/* ── Window decorations ──────────────────────────────────────────────────── */
+window {
+    box-shadow: 0 8px 32px alpha(black, 0.3);
+}
+
+window.maximized {
+    box-shadow: none;
 }
 "#;
 
@@ -152,6 +324,19 @@ impl MyTerminalWindow {
                 .connect_toggled(move |btn| {
                     search_bar_clone.set_search_mode(btn.is_active());
                 });
+        }
+
+        // ── Build theme switcher menu ─────────────────────────────────────
+        {
+            let theme_menu = gio::Menu::new();
+            let theme_names = theme_manager.borrow().theme_names();
+
+            for (key, display_name) in theme_names {
+                let action_name = format!("win.switch-theme::{}", key);
+                theme_menu.append(Some(display_name), Some(&action_name));
+            }
+
+            header_bar_wrapper.theme_button.set_menu_model(Some(&theme_menu));
         }
 
         toolbar_view.add_top_bar(&header_bar_wrapper.bar);
@@ -430,6 +615,28 @@ impl MyTerminalWindow {
                     .modal(true)
                     .build();
                 sw.present();
+            });
+            window.add_action(&act);
+        }
+
+        // ── switch-theme ──────────────────────────────────────────────────
+        // Register individual actions for each theme
+        let theme_names = theme_manager.borrow().theme_names();
+        for (key, _) in theme_names {
+            let action_name = format!("switch-theme::{}", key);
+            let act = gio::SimpleAction::new(&action_name, None);
+            let theme_mgr = Rc::clone(theme_manager);
+            let tab_mgr = Rc::clone(tab_manager);
+            let settings_clone = Rc::clone(settings);
+            let overlay = toast_overlay.clone();
+            let key_owned = key.to_string();
+
+            act.connect_activate(move |_, _| {
+                theme_mgr.borrow_mut().set_active(&key_owned);
+                let theme = theme_mgr.borrow().active().clone();
+                tab_mgr.borrow().apply_theme_to_all(&theme);
+                settings_clone.borrow_mut().theme = key_owned.clone();
+                show_toast(&overlay, &format!("Switched to {} theme", theme.name));
             });
             window.add_action(&act);
         }

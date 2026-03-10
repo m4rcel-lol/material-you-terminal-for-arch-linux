@@ -364,6 +364,65 @@ fn build_behaviour_page(
         });
     }
     terminal_group.add(&bell_row);
+
+    let audible_bell_row = adw::SwitchRow::builder()
+        .title("Audible Bell")
+        .subtitle("Play system sound on terminal bell (requires bell to be enabled)")
+        .active(settings.borrow().audible_bell)
+        .build();
+    {
+        let settings = Rc::clone(&settings);
+        audible_bell_row.connect_active_notify(move |row| {
+            settings.borrow_mut().audible_bell = row.is_active();
+        });
+    }
+    terminal_group.add(&audible_bell_row);
+
+    let bold_row = adw::SwitchRow::builder()
+        .title("Allow Bold Text")
+        .subtitle("Enable bold text formatting in terminal")
+        .active(settings.borrow().allow_bold)
+        .build();
+    {
+        let settings = Rc::clone(&settings);
+        let on_refresh = Rc::clone(&_on_refresh);
+        bold_row.connect_active_notify(move |row| {
+            settings.borrow_mut().allow_bold = row.is_active();
+            (on_refresh)();
+        });
+    }
+    terminal_group.add(&bold_row);
+
+    let bold_bright_row = adw::SwitchRow::builder()
+        .title("Bold Text is Bright")
+        .subtitle("Display bold text using bright colors")
+        .active(settings.borrow().bold_is_bright)
+        .build();
+    {
+        let settings = Rc::clone(&settings);
+        let on_refresh = Rc::clone(&_on_refresh);
+        bold_bright_row.connect_active_notify(move |row| {
+            settings.borrow_mut().bold_is_bright = row.is_active();
+            (on_refresh)();
+        });
+    }
+    terminal_group.add(&bold_bright_row);
+
+    let hyperlink_row = adw::SwitchRow::builder()
+        .title("Detect Hyperlinks")
+        .subtitle("Enable automatic detection and highlighting of URLs")
+        .active(settings.borrow().allow_hyperlinks)
+        .build();
+    {
+        let settings = Rc::clone(&settings);
+        let on_refresh = Rc::clone(&_on_refresh);
+        hyperlink_row.connect_active_notify(move |row| {
+            settings.borrow_mut().allow_hyperlinks = row.is_active();
+            (on_refresh)();
+        });
+    }
+    terminal_group.add(&hyperlink_row);
+
     page.add(&terminal_group);
 
     page
