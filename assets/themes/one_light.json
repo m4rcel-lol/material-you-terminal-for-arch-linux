@@ -1,0 +1,29 @@
+{
+  "name": "One Light",
+  "background": "#FAFAFA",
+  "foreground": "#383A42",
+  "cursor": "#526FFF",
+  "cursor_foreground": "#FAFAFA",
+  "selection_background": "#E5E5E6",
+  "selection_foreground": "#383A42",
+  "surface": "#F0F0F1",
+  "accent": "#4078F2",
+  "ansi": [
+    "#FAFAFA",
+    "#CA1243",
+    "#50A14F",
+    "#C18401",
+    "#4078F2",
+    "#A626A4",
+    "#0184BC",
+    "#383A42",
+    "#A0A1A7",
+    "#CA1243",
+    "#50A14F",
+    "#C18401",
+    "#4078F2",
+    "#A626A4",
+    "#0184BC",
+    "#090A0B"
+  ]
+}

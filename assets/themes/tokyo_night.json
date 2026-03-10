@@ -1,0 +1,29 @@
+{
+  "name": "Tokyo Night",
+  "background": "#1A1B26",
+  "foreground": "#C0CAF5",
+  "cursor": "#C0CAF5",
+  "cursor_foreground": "#1A1B26",
+  "selection_background": "#283457",
+  "selection_foreground": "#C0CAF5",
+  "surface": "#16161E",
+  "accent": "#7AA2F7",
+  "ansi": [
+    "#15161E",
+    "#F7768E",
+    "#9ECE6A",
+    "#E0AF68",
+    "#7AA2F7",
+    "#BB9AF7",
+    "#7DCFFF",
+    "#A9B1D6",
+    "#414868",
+    "#F7768E",
+    "#9ECE6A",
+    "#E0AF68",
+    "#7AA2F7",
+    "#BB9AF7",
+    "#7DCFFF",
+    "#C0CAF5"
+  ]
+}
