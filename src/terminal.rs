@@ -30,7 +30,7 @@ impl TerminalWidget {
         terminal.set_cursor_shape(settings.cursor_shape.to_vte());
         terminal.set_mouse_autohide(true);
         terminal.set_allow_hyperlink(settings.allow_hyperlinks);
-        terminal.set_allow_bold(settings.allow_bold);
+        // Note: set_allow_bold was removed from VTE4; bold rendering is now always enabled
         terminal.set_bold_is_bright(settings.bold_is_bright);
         terminal.set_audible_bell(settings.audible_bell);
 
