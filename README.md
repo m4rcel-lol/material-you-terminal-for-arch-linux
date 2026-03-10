@@ -11,19 +11,22 @@ MyTerminal combines the raw power of a POSIX pseudo-terminal with a polished, co
 |----------|---------|
 | **UI Framework** | Rust · GTK4 · Libadwaita (Material You) |
 | **Terminal Engine** | VTE4 (vte-2.91-gtk4) |
-| **Tabs** | Create, close, rename, duplicate, reorder |
+| **Tabs** | Create, close, rename, duplicate, reorder with smooth animations |
 | **Keyboard Shortcuts** | Fully customisable via `config.json` |
-| **Themes** | 6 built-in themes + user-defined JSON themes |
-| **Settings Panel** | Libadwaita Preferences Window (fonts, opacity, cursor …) |
+| **Themes** | 17 professional built-in themes + user-defined JSON themes |
+| **Quick Theme Switcher** | One-click theme switching from header bar dropdown |
+| **Settings Panel** | Libadwaita Preferences Window (fonts, opacity, cursor, bold text, hyperlinks) |
 | **Command Palette** | VS Code-style fuzzy search (`Ctrl+Shift+P`) |
 | **Search** | In-terminal text search (`Ctrl+Shift+F`) |
 | **Context Menu** | Right-click → copy / paste / search / new tab |
-| **Toast Notifications** | Non-intrusive confirmations (copy, errors, …) |
-| **Scrollback Buffer** | Configurable (default 10 000 lines) |
+| **Toast Notifications** | Non-intrusive confirmations with animations |
+| **Scrollback Buffer** | Configurable (default 10,000 lines, unlimited supported) |
 | **Transparency** | Per-terminal background opacity |
 | **True Colour** | 24-bit colour + full Unicode support |
-| **Clickable URLs** | Hyperlink detection in terminal output |
+| **Clickable URLs** | Configurable hyperlink detection and highlighting |
+| **Bold Text** | Configurable bold text rendering and bright color variants |
 | **Zoom** | `Ctrl++` / `Ctrl+-` / `Ctrl+0` |
+| **Modern UI** | Material Design 3 with smooth transitions, shadows, and hover effects |
 
 ---
 
@@ -90,16 +93,32 @@ sudo install -Dm644 data/com.myterminal.app.desktop \
 
 ## 🎨 Themes
 
-Six built-in themes are included and also written to `~/.config/myterminal/themes/` on first run:
+17 professional built-in themes are included and also written to `~/.config/myterminal/themes/` on first run:
 
+### Dark Themes
 | Theme | Style |
 |-------|-------|
 | `material_dark` | Material You dark (default) |
+| `amoled_black` | Pure black OLED optimized |
+| `solarized_dark` | Classic Solarized Dark |
+| `dracula` | Popular Dracula theme |
+| `nord` | Nordic-inspired Nord |
+| `gruvbox_dark` | Retro groove Gruvbox |
+| `catppuccin_mocha` | Catppuccin Mocha |
+| `tokyo_night` | Tokyo Night default |
+| `tokyo_night_storm` | Tokyo Night Storm variant |
+| `one_dark` | Atom One Dark |
+| `monokai_pro` | Professional Monokai |
+| `github_dark` | GitHub Dark theme |
+
+### Light Themes
+| Theme | Style |
+|-------|-------|
 | `material_light` | Material You light |
-| `amoled_black` | Pure black OLED |
-| `solarized_dark` | Solarized Dark |
-| `dracula` | Dracula |
-| `nord` | Nord |
+| `gruvbox_light` | Light Gruvbox variant |
+| `catppuccin_latte` | Catppuccin Latte |
+| `one_light` | Atom One Light |
+| `github_light` | GitHub Light theme |
 
 ### Custom themes
 
@@ -125,7 +144,28 @@ Add a JSON file to `~/.config/myterminal/themes/`:
 }
 ```
 
-Restart MyTerminal (or switch to the theme in settings) to load new themes.
+Restart MyTerminal (or switch to the theme in settings/quick switcher) to load new themes.
+
+### Quick Theme Switching
+
+Click the palette icon (🎨) in the header bar to instantly switch between all available themes without opening settings. Theme changes are applied immediately and persisted automatically.
+
+---
+
+## 🎨 Enhanced UI
+
+MyTerminal features a polished, modern interface with Material Design 3:
+
+- **Smooth Animations**: All UI elements feature 200ms cubic-bezier transitions
+- **Enhanced Tab Bar**: Rounded tabs with hover effects, shadows, and smooth transitions
+- **Modern Header Bar**: Elevated design with subtle shadows and button hover states
+- **Styled Scrollbars**: Custom scrollbars with smooth hover animations
+- **Beautiful Command Palette**: Enhanced with proper spacing, shadows, and visual hierarchy
+- **Toast Notifications**: Modern rounded toasts with smooth animations
+- **Window Decorations**: Elegant shadows that adapt when maximized
+- **Improved Buttons**: Gradient backgrounds for suggested/destructive actions
+- **Menu Polish**: Rounded menu items with smooth hover transitions
+- **Accessibility**: High contrast support and keyboard navigation throughout
 
 ---
 
@@ -147,9 +187,22 @@ Key options:
   "transparency": 1.0,
   "padding": 8,
   "cursor_shape": "block",
-  "bell": false
+  "bell": false,
+  "font_ligatures": false,
+  "allow_bold": true,
+  "bold_is_bright": true,
+  "allow_hyperlinks": true,
+  "audible_bell": false
 }
 ```
+
+### Advanced Settings
+
+- **`allow_bold`**: Enable/disable bold text rendering in the terminal
+- **`bold_is_bright`**: Use bright color variants for bold text
+- **`allow_hyperlinks`**: Automatic URL detection and clickable links
+- **`audible_bell`**: System sound on terminal bell (BEL character)
+- **`font_ligatures`**: Enable font ligatures (requires ligature-capable font)
 
 ---
 
