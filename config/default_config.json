@@ -1,0 +1,29 @@
+{
+  "theme": "material_dark",
+  "font_family": "Monospace",
+  "font_size": 13.0,
+  "shell": null,
+  "scrollback_lines": 10000,
+  "cursor_blink": true,
+  "transparency": 1.0,
+  "padding": 8,
+  "startup_directory": null,
+  "cursor_shape": "block",
+  "bell": false,
+  "font_ligatures": false,
+  "keybindings": {
+    "new_tab": "<Control><Shift>t",
+    "close_tab": "<Control><Shift>w",
+    "next_tab": "<Control>Tab",
+    "prev_tab": "<Control><Shift>Tab",
+    "search": "<Control><Shift>f",
+    "command_palette": "<Control><Shift>p",
+    "zoom_in": "<Control>plus",
+    "zoom_out": "<Control>minus",
+    "zoom_reset": "<Control>0",
+    "split_horizontal": "<Control><Shift>d",
+    "split_vertical": "<Control>d",
+    "copy": "<Control><Shift>c",
+    "paste": "<Control><Shift>v"
+  }
+}

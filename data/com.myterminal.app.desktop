@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=MyTerminal
+GenericName=Terminal Emulator
+Comment=A modern Material You terminal emulator
+Exec=myterminal
+Icon=utilities-terminal
+Terminal=false
+Type=Application
+Categories=System;TerminalEmulator;
+StartupNotify=true
+StartupWMClass=myterminal
+Keywords=terminal;console;command;shell;

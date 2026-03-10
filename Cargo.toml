@@ -1,0 +1,42 @@
+[package]
+name = "myterminal"
+version = "0.1.0"
+edition = "2021"
+authors = ["MyTerminal Contributors"]
+description = "A modern Material You terminal emulator for Linux"
+license = "GPL-3.0"
+repository = "https://github.com/m4rcel-lol/material-you-terminal-for-arch-linux"
+keywords = ["terminal", "gtk4", "material-you", "linux"]
+
+[dependencies]
+# GTK4 UI framework
+gtk4 = { version = "0.9", features = ["v4_14"] }
+
+# Libadwaita for Material Design / GNOME HIG styling
+libadwaita = { version = "0.7", features = ["v1_5"] }
+
+# VTE4 terminal widget (GTK4 version)
+vte4 = "0.8"
+
+# GLib / GIO / GDK4 utilities (re-exported by gtk4, but used directly for types)
+glib = "0.20"
+gio = "0.20"
+gdk4 = "0.9"
+pango = "0.20"
+
+# Serialisation for settings/themes
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# XDG / platform directories (~/.config, ~/.local/share, …)
+dirs = "5"
+
+# Logging
+log = "0.4"
+env_logger = "0.11"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true

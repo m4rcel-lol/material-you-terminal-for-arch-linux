@@ -1,0 +1,29 @@
+{
+  "name": "Material Dark",
+  "background": "#121212",
+  "foreground": "#E0E0E0",
+  "cursor": "#BB86FC",
+  "cursor_foreground": "#121212",
+  "selection_background": "#3700B3",
+  "selection_foreground": "#FFFFFF",
+  "surface": "#1E1E2E",
+  "accent": "#BB86FC",
+  "ansi": [
+    "#1E1E2E",
+    "#F38BA8",
+    "#A6E3A1",
+    "#F9E2AF",
+    "#89B4FA",
+    "#CBA6F7",
+    "#89DCEB",
+    "#BAC2DE",
+    "#45475A",
+    "#F38BA8",
+    "#A6E3A1",
+    "#F9E2AF",
+    "#89B4FA",
+    "#CBA6F7",
+    "#89DCEB",
+    "#CDD6F4"
+  ]
+}
