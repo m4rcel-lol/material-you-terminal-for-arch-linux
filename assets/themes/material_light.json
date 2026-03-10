@@ -1,0 +1,29 @@
+{
+  "name": "Material Light",
+  "background": "#FAFAFA",
+  "foreground": "#1C1B1F",
+  "cursor": "#6750A4",
+  "cursor_foreground": "#FAFAFA",
+  "selection_background": "#D0BCFF",
+  "selection_foreground": "#21005D",
+  "surface": "#FFFBFE",
+  "accent": "#6750A4",
+  "ansi": [
+    "#FAFAFA",
+    "#B3261E",
+    "#386A20",
+    "#7D5700",
+    "#0061A4",
+    "#6750A4",
+    "#006874",
+    "#1C1B1F",
+    "#938F99",
+    "#B3261E",
+    "#386A20",
+    "#7D5700",
+    "#0061A4",
+    "#6750A4",
+    "#006874",
+    "#49454F"
+  ]
+}

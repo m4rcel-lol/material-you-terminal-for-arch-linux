@@ -1,0 +1,14 @@
+# Rust build artefacts
+/target/
+Cargo.lock
+
+# Editor / IDE directories
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS metadata
+.DS_Store
+Thumbs.db
